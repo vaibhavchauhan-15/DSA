@@ -514,6 +514,52 @@ for(int i=0;i<rows;i++){
        cin>>brr[i][j]; 
    } 
 }
+
+//BINARY SEARCH
+
+#include<iostream>
+using namespace std;
+int binarysearch(int arr[],int size,int target){
+int start=0;
+int end=size -1;
+int mid =(start +end)/2;
+while(start<=end){
+   int element =arr[mid];
+   
+   if(element == target){
+      return mid ;
+   }
+   else if(target < element){
+      //go left
+      end = mid - 1;
+   }
+   else {
+      //go right
+      start = mid + 1;
+
+   }
+   mid= (start + end )/2;
+
+}
+//element not found 
+return -1;
+}
+int main(){
+   int arr[]={1,3,4,6,8,9,10,14,16,18,19,20};
+   int size=sizeof(arr)/sizeof(int);
+   int target =1;
+   int indexOftarget = binarysearch(arr,size,target);
+   if(indexOftarget== -1){
+      cout<<target<<" not found"<<endl;
+   }
+   else{
+      cout<<target<<" found at "<<indexOftarget<<" index"<<endl;
+   }
+
+}  
+  
+
+  
 cout<<"transpose is:"<<endl;
 transpose(brr,rows,cols);
 
