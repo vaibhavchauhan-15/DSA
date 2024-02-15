@@ -581,3 +581,21 @@ else{
 }
   return 0;
 }
+
+//pre deine function for array
+#include <vector>
+#include <iostream>
+#include<algorithm>
+using namespace std;
+
+int main() {
+int arr [ ] = {2,3,5,6,7,8};
+int size = 6;
+if(binary_search(arr,arr + size ,8)){
+    cout<<"found!";
+}
+else{
+    cout<<"Not found!";
+}
+  return 0;
+}
