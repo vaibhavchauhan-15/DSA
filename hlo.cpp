@@ -564,3 +564,20 @@ cout<<"transpose is:"<<endl;
 transpose(brr,rows,cols);
 
 }
+
+//pre deine function for binary search
+#include <vector>
+#include <iostream>
+#include<algorithm>
+using namespace std;
+
+int main() {
+vector<int> v{2,3,5,6,7,8};
+if(binary_search(v.begin(),v.end(),6)){
+    cout<<"found!";
+}
+else{
+    cout<<"Not found!";
+}
+  return 0;
+}
