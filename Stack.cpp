@@ -303,3 +303,57 @@ int main()
     midstack(st, st.size());
     return 0;
 }
+
+
+// INSERT ELEMENT AT MIDDLE OF  STACK
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void insertAtMiddle(stack<int> &st, int mid) {  
+    int totalsize=st.size();
+    stack<int> temp;
+    if(st.empty()){
+        cout<<"no element exist"<<endl;
+    }
+    for(int i=0;i<totalsize/2;i++){
+        temp.push(st.top());
+        st.pop();
+    }
+    st.push(mid);
+    while(!temp.empty()){
+        st.push(temp.top());
+        temp.pop();
+    }
+}
+
+int main() {
+    int mid = 10;
+    stack<int> st;
+    st.push(1);
+    st.push(3);
+    st.push(23);
+    st.push(32);
+    st.push(5);
+    st.push(56);
+    
+
+    cout<<"ORIGINAL ELEMENT: ";
+    stack<int> original=st;
+    while (!original.empty())
+    {
+       cout<<original.top()<<" ";
+       original.pop();
+    }cout<<endl;
+
+    insertAtMiddle(st,mid);
+
+    cout<<"UPDATE ELEMENT: ";
+    while(!st.empty()){
+        cout<<st.top()<<" ";
+        st.pop();
+    }cout<<endl;
+
+    return 0;
+}
+
