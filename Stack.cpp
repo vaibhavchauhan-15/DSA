@@ -265,4 +265,41 @@ int main(){
     }
     return 0;
 }
-    
+
+// FIND MIDDLE ELEMENT USING STACK
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int midstack(stack<int> &st, int totalsize)
+{
+    if (totalsize == 0)
+    {
+        cout << "There is no element:" << endl;
+        return 0;
+    }
+    // base case
+    if (totalsize / 2 + 1 == st.size())
+    {
+        cout << "middle element is: " << st.top();
+    }
+
+    int temp = st.top();
+    st.pop();
+    // recusive call
+    midstack(st, totalsize);
+    // backtracking
+    st.push(temp);
+}
+int main()
+{
+    stack<int> st;
+    st.push(1);
+    st.push(2);
+    st.push(35);
+    st.push(65);
+    st.push(2);
+    st.push(44);
+    midstack(st, st.size());
+    return 0;
+}
