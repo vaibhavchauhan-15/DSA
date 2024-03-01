@@ -427,3 +427,64 @@ int main()
     return 0;
 }
 
+
+//check valid prarathesis
+
+#include<iostream>
+#include<stack>
+// #include<string>
+using namespace std;
+
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char>st;
+        for(int i=0;i<s.length();i++){
+            char ch=s[i];
+            //open bracket
+            if(ch=='(' ||ch=='{' ||ch=='['){
+                st.push(ch);
+            } //close bracket
+            else{
+                if(!st.empty()){
+                    char topch=st.top();
+                    if(ch==')' && topch=='('){
+                        //matching bracket
+                        st.pop();
+                    }
+                     else if(ch=='}' && topch=='{'){
+                        st.pop();//matching bracket
+                    }
+                     else if(ch==']' && topch=='['){
+                        st.pop();//matching bracket
+                    }else{
+                        return false;
+                    }
+
+                }else{
+                    return false;
+                }
+            }
+        }
+        if(st.empty()){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+};
+
+int main(){
+    Solution solution;
+    string s;
+    cout<<"enter the prathesis :";
+    cin>>s;
+   if(solution.isValid(s)==true){
+    cout<<"VALID PARANTHESIS"<<endl;
+   }else{
+    cout<<"NOT VALID PARANTHESIS"<<endl;
+   }
+    return 0;
+}
+
