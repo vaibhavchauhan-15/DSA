@@ -357,3 +357,73 @@ int main() {
     return 0;
 }
 
+
+// REVERSE STACK
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void insertAtBottom(stack<int> &st, int target)
+{
+    if (st.empty())
+    {
+        st.push(target);
+        return;
+    }
+    int temp = st.top();
+    st.pop();
+
+    // Recursive call
+    insertAtBottom(st, target);
+    // Backtracking
+    st.push(temp);
+}
+
+void reverse(stack<int> &st)
+{
+    // Base case
+    if (st.empty())
+    {
+        return;
+    }
+
+    int target = st.top();
+    st.pop();
+    // Reverse remaining stack
+    reverse(st);
+
+    // Insert at bottom of stack
+    insertAtBottom(st, target);
+}
+
+int main()
+{
+    stack<int> st;
+    st.push(1);
+    st.push(3);
+    st.push(23);
+    st.push(32);
+    st.push(5);
+    st.push(56);
+
+    cout << "ORIGINAL STACK: ";
+    stack<int> original = st; // Copy the stack to print original elements
+    while (!original.empty())
+    {
+        cout << original.top() << " ";
+        original.pop();
+    }
+    cout << endl;
+
+    reverse(st);
+
+    cout << "UPDATED ELEMENTS: ";
+    while (!st.empty())
+    {
+        cout << st.top() << " ";
+        st.pop();
+    }
+    cout << endl;
+    return 0;
+}
+
