@@ -488,3 +488,110 @@ int main(){
     return 0;
 }
 
+// put element at sorted place of stack using recursion
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void insert(stack<int> &st, int target)
+{
+    // base case
+    if (st.empty())
+    {
+        st.push(target);
+        return;
+    }
+    if (target >= st.top())
+    {
+        st.push(target);
+        return;
+    }
+    int topE = st.top();
+    st.pop();
+
+    insert(st, target);
+
+    st.push(topE);
+}
+
+int main()
+{
+    stack<int> st;
+    int target = 1;
+    st.push(5);
+    st.push(7);
+    st.push(9);
+    st.push(10);
+    st.push(12);
+    st.push(13);
+    st.push(15);
+    st.push(20);
+
+    insert(st, target);
+
+    cout<<"Printing :";
+    while (!st.empty())
+    {
+        cout << st.top() << " ";
+        st.pop();
+    }
+}
+
+// sort the stack using recursion
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void insert(stack<int> &st, int topE)
+{
+    //base case
+    if (st.empty() || topE <= st.top())
+    {
+        st.push(topE);
+        return;
+    }
+    int temp = st.top();
+    st.pop();
+    //recursive
+    insert(st, topE);
+
+    //back track
+    st.push(temp);
+}
+
+void sort(stack<int> &st)
+{
+    //base case
+    if (!st.empty())
+    {
+        int topE = st.top();
+        st.pop();
+        sort(st);
+        insert(st, topE);
+    }
+}
+
+int main()
+{
+    stack<int> st;
+    st.push(7);
+    st.push(5);
+    st.push(15);
+    st.push(9);
+    st.push(13);
+    st.push(10);
+    st.push(20);
+    st.push(12);
+
+    sort(st);
+
+    cout << "Printing: ";
+    while (!st.empty())
+    {
+        cout << st.top() << " ";
+        st.pop();
+    }
+    return 0;
+}
+
