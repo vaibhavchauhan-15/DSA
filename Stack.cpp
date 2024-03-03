@@ -595,3 +595,57 @@ int main()
     return 0;
 }
 
+
+// minimum element of stack
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void insert(stack<int> &st, int target)
+{
+    if (st.empty() || target <= st.top())
+    {
+        st.push(target);
+        return;
+    }
+
+    int temp = st.top();
+    st.pop();
+
+    insert(st, target);
+
+    st.push(temp);
+}
+
+void sort(stack<int> &st)
+{
+    if (!st.empty())
+    {
+        int target = st.top();
+        st.pop();
+
+        sort(st);
+
+        insert(st, target);
+    }
+    return;
+}
+
+int main()
+{
+    stack<int> st;
+    st.push(7);
+    st.push(9);
+    st.push(2);
+    st.push(5);
+    st.push(10);
+    st.push(12);
+    st.push(13);
+    st.push(15);
+    st.push(9);
+
+    sort(st);
+
+    cout << "minimum element is:" << st.top() << endl;
+}
