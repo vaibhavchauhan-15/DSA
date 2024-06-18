@@ -5,7 +5,7 @@
 using namespace std; 
 
 int main(){ 
-//declare
+//declare 
 //int arr[3][3];
 //initialize   
    
