@@ -2,7 +2,7 @@
 
 #include<iostream>
 #include<vector>
-using namespace std; 
+using namespace std;  
 
 int main(){  
 //declare 
