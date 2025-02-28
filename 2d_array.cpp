@@ -2,7 +2,7 @@
 //2D ARRAY
 
 #include<iostream>     
-#include<vector>  
+#include<vector>   
 using namespace std;   
 
 int main(){   
