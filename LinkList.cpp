@@ -1,4 +1,4 @@
-// creating linked list 
+// creating linked list  
 #include <iostream>  
 using namespace std;     
    
