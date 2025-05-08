@@ -23,8 +23,6 @@ int main()
 {
     int arr[] = {1, 5, 4, 7, 8, 2, 54, 89, 5, 2, 46, 546, 4};
     int n = 13;
-    // int size = sizeof(arr) / 4;
-    // cout << size;
     reverseArray(arr, n);
     return 0;
 }
