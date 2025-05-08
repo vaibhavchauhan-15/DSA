@@ -3,15 +3,16 @@ using namespace std;
 
 int reverseArray(int arr[], int n)
 {
+    for
 
-    int i = 0;
-    int j = n - 1;
-    while (i < j)
-    {
-        swap(arr[i],arr[j]);
-        i++;
-        j--;
-    }
+    // int i = 0;
+    // int j = n - 1;
+    // while (i < j)
+    // {
+    //     swap(arr[i],arr[j]);
+    //     i++;
+    //     j--;
+    // }
 
     for (int a = 0; a < n; a++)
     {
