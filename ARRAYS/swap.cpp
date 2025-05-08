@@ -3,7 +3,9 @@ using namespace std;
 
 int reverseArray(int arr[], int n)
 {
-    for
+    for(int i=0 , j = n-1; i<=j; i++ , j-- ){
+
+    }
 
     // int i = 0;
     // int j = n - 1;
