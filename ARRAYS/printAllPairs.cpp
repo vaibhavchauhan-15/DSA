@@ -21,5 +21,7 @@ int main(){
         }
         cout<<endl;
     }
+    cout<<"Triplet Pairs"<<endl;
+    
     return 0;
 }
