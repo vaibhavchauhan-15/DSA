@@ -9,8 +9,9 @@ int getUnique(int arr[] , int n){
     return ans;
 }
 int main(){
-    int arr[]={1 ,2,8,6,8,1,2,6,9};
-    int n=9;
+    int arr[]={1 ,2,9,8,6,8,1,2,6,9,4};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    cout<<n<<endl;
     int finalAns=getUnique(arr , n);
     cout<<"Unique element is :"<<finalAns;
     return 0;
