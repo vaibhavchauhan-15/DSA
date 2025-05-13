@@ -3,7 +3,7 @@
 using namespace std;
 
 void twoPointer(vector<int> arr)
-{   cout<<"Two Pointer Approach";
+{   cout<<"Two Pointer Approach"<<endl;
     int start = 0;
     int i = 0;
     int end = arr.size() - 1;
@@ -25,6 +25,7 @@ void twoPointer(vector<int> arr)
     {
         cout << value << " ";
     }
+    cout<<endl;
 }
 
 void countApproach(vector<int> arr)
@@ -40,17 +41,20 @@ void countApproach(vector<int> arr)
         }  
     }
     cout<<"Zero is:"<<coutnt0<<"and One is:"<<coutnt1<<endl;
-    int index=0;
-    while (coutnt0--)
-    {
-        arr[index]=0;
-        index++;
+    for (int i = 0; i < coutnt0; i++) {
+        arr[i]=0;  
     }
-    while (coutnt1--)
-    {
-        arr[index]=1;
-        index++;
-    }
+    // int index=0;
+    // while (coutnt0--)
+    // {
+    //     arr[index]=0;
+    //     index++;
+    // }
+    // while (coutnt1--)
+    // {
+    //     arr[index]=1;
+    //     index++;
+    // }
     for(auto ans :arr){
         cout<<ans<<" ";
     }
@@ -59,7 +63,7 @@ void countApproach(vector<int> arr)
 int main()
 {
     vector<int> arr{1, 0, 1, 0, 0, 1, 0, 1, 0};
-    // twoPointer(arr);
+    twoPointer(arr);
     countApproach(arr);
 
     return 0;
