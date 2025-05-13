@@ -7,7 +7,7 @@ int main()
     cin >> tt;
     while (tt--)
     {
-        int n, m, r, l;
+        int n, m, r, l; 
         cin >> n >> m >> l >> r;
         int r1 = 0, l1 = 0;
         for (int i = 0; i <= r; i++)
