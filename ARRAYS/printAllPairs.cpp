@@ -22,15 +22,16 @@ int main(){
     //     cout<<endl;
     // }
     cout<<"Triplet Pairs"<<endl;
+    int brr[]={1,5,8,5};
     for (int i = 0; i < n; i++) {
         for (int j =0 ; j < n; j++){
             for (int k = 0; k < n; k++) {
                 
-                cout<<arr[i]<<" ,"<<arr[j]<< " , " <<arr[k]<<" ";  
+                cout<<"{"<<brr[i]<<","<<brr[j]<< "," <<brr[k]<<"}"<<endl;  
             }
 
         }
-        cout<<endl;
+        // cout<<endl;
     }
 
     return 0;
