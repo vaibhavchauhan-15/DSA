@@ -1,18 +1,9 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-int main() {
-    // update your code here
-    int side1 , side2 ,side3;
-    cin>>side1>>side2>>side3;
-    
-    if(side1==side2 && side1 == side3){
-        cout<<"Equilateral";
-    }else if(side1==side2 || side1 == side3){
-		cout<<"Isosceles";
-    }else{
-		cout<<"Scalene";
-    }
-
-    return 0;
+int main()
+{
+  int n = 5;
+  float divide = (float)n / 10;  // Cast to float for floating-point division
+  cout << divide;  // Will now output 0.5
+  return 0;
 }
