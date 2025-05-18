@@ -1,5 +1,6 @@
-# BINARY SEARCH LOGIC TYPE
-1.CLASSICAL 
-2.SEARCH SPACE
-3.PREDICATE FUNCTION
-4.INDEX LOGIC
+# Binary Search Logic Types
+
+1. **Classical**
+2. **Search Space**
+3. **Predicate Function**
+4. **Index Logic**
