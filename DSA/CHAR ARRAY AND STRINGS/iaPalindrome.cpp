@@ -2,29 +2,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void isPalindrome(char ch[] ,int n){
-    char original[100];
-    strcpy(original,ch);
+bool isPalindrome(char ch[] ,int n){
     int i=0;
     int j=n-1;
     while (i<=j)
     {   
-        swap(ch[i],ch[j]);
-        i++;
-        j--;
+        if(ch[i]==ch[j]){
+            i++;
+            j--;
+        }else return false;
     }
-
-    if(original==ch){
-        cout << "Palindrome" <<endl;
-    }else{
-        cout << "Not Palindorme" <<endl;
-    }
+    return true;
+    
 } 
 
 int main(){
     char ch[100];
     cin.get(ch , 100);
     int n=strlen(ch);
-    isPalindrome(ch,n);
+    bool sahiYaGalat=isPalindrome(ch,n);
+    if(sahiYaGalat==true){
+        cout << "Palindrome" <<endl;
+    }else{
+        cout << "Not Palindorme" <<endl;
+    }
     return 0;
 }
