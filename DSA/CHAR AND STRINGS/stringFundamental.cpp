@@ -29,7 +29,7 @@ int main(){
 
     cout << "Before contacatinate "<<endl<<"Name :"<<name<<endl<<"Last Name : "<<Lname <<endl;
 
-    //containate two string
+    //containate two string (append)
     name.append(Lname);
     cout << "After contacatinate :"<<name <<endl;
 
