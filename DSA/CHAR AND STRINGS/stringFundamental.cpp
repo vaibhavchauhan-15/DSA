@@ -81,8 +81,8 @@ int main(){
 
 
     //******sub string**************** */
-    string name="vaibahv chauhan";
-    cout << "Sub String of name from 3  index and lengh is 9 is : "<<name.substr(3,9) <<endl;
+    // string name="vaibahv chauhan";
+    // cout << "Sub String of name from 3  index and lengh is 9 is : "<<name.substr(3,9) <<endl;
     
     return 0;
 }
