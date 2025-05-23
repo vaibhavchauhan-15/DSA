@@ -5,6 +5,7 @@ bool customCompare(char a , char b){
     if(str.find(a)<str.find(b)){
         return true;
     }
+    return false;
 }
 string customSortString(string order, string s) {
     str=order;
