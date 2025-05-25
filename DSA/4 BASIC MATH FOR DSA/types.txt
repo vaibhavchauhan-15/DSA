@@ -1,0 +1,25 @@
+1.naive // 0 ------------ n-1;
+2.sqrt // 0 ------------ root(n);
+
+
+3.sieve of eratosthenes
+    count prime
+    for (int i = 2; i < n; i++)
+        {
+            if (prime[i])
+            {
+                ans++;
+                // start from 2 which is prime number and mark as false multiple of 2
+                // then next 3 is also prime num and mark as false multiple of 3 and so on up to n-1
+                // remaining true are prime number
+                int j = 2 * i;
+                while (j < n)
+                {
+                    prime[j] = false;
+                    j = j + i;
+                }
+            }
+        }
+
+
+4.segment sieve
