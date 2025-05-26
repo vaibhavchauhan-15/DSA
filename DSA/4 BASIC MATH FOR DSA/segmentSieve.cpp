@@ -33,7 +33,9 @@ void segmentedSieve(long long L, long long R) {
 }
 
 int main(){
-    
+    cout << "Enter start and end point to Print prime number :";
+    int L ,R;cin>>L>>R;
+    segmentedSieve(L,R);
     return 0;
 }
 
