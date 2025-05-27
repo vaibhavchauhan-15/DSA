@@ -1,67 +1,54 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<bool> seive(long long n) {
-    vector<bool> prime(n + 1, true);
-    prime[0] = prime[1] = false;
-    long long m = sqrt(n);
-    for (long long i = 2; i <= m; i++) {
-        if (prime[i]) {
+const long long MOD = 1e9 + 7;
+
+// Simple Sieve to find primes up to sqrt(R)
+vector<bool> simpleSieve(long long n) {
+    vector<bool> isPrime(n + 1, true);
+    isPrime[0] = isPrime[1] = false;
+    for (long long i = 2; i * i <= n; i++) {
+        if (isPrime[i]) {
             for (long long j = i * i; j <= n; j += i) {
-                prime[j] = false;
+                isPrime[j] = false;
             }
         }
     }
-    return prime;
+    return isPrime;
 }
 
 long long primeProduct(long long L, long long R) {
-    vector<bool> segPrime = seive(sqrt(R));
-    vector<long long> basePrime;
-    for (long long i = 0; i < segPrime.size(); i++) {
-        if (segPrime[i]) {
-            basePrime.push_back(i);
+    vector<bool> basePrimes = simpleSieve(sqrt(R));
+    vector<long long> primes;
+    for (long long i = 2; i < basePrimes.size(); i++) {
+        if (basePrimes[i]) {
+            primes.push_back(i);
         }
     }
 
-    vector<bool> seggSeive(R - L + 1, true);
-    if (L <= 1) {
-        for (long long i = L; i <= min(R, 1LL); i++) {
-            seggSeive[i - L] = false;
-        }
-    }
+    vector<bool> isSegmentPrime(R - L + 1, true);
+    if (L == 1) isSegmentPrime[0] = false;
 
-    for (auto prime : basePrime) {
-        long long first_mul = (L / prime) * prime;
-        if (first_mul < L) {
-            first_mul += prime;
-        }
-        long long j = max(prime * prime, first_mul);
-        while (j <= R) {
-            seggSeive[j - L] = false;
-            j += prime;
+    for (long long prime : primes) {
+        long long start = max(prime * prime, ((L + prime - 1) / prime) * prime);
+        for (long long j = start; j <= R; j += prime) {
+            isSegmentPrime[j - L] = false;
         }
     }
 
     long long product = 1;
-    bool found = false;
-    for (long long i = 0; i < seggSeive.size(); i++) {
-        if (seggSeive[i]) {
-            found = true;
-            product = product * (i + L);
-            // cout << i + L << " ";
+    for (long long i = 0; i <= R - L; i++) {
+        if (isSegmentPrime[i]) {
+            product = (product * (L + i)) % MOD;
         }
     }
-    if (!found) cout << "1";
+
     return product;
 }
-
 int main() {
-    cout << "Enter First number  : ";
-    long long L; cin >> L;
-    cout << "Enter Last number  : ";
-    long long R; cin >> R;
-    long long ans = primeProduct(L, R);
-    cout << endl << "Total product is : " << ans << endl;
+    long long L, R;
+    cin>>L>>R;
+    cout << primeProduct(L, R) << endl; 
+
     return 0;
 }
