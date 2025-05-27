@@ -1,41 +1,63 @@
 #include<bits/stdc++.h>
 using namespace std;
-void simpleSieve(int limit, vector<int> &prime) {
-    vector<bool> mark(limit + 1, true);
-    mark[0] = mark[1] = false;
-
-    for (int i = 2; i <= limit; i++) {
-        if (mark[i]) {
-            prime.push_back(i);
-            for (int j = i * i; j <= limit; j += i)
-                mark[j] = false;
+vector<bool> seive(int n){
+    vector<bool>prime(n +1 ,true);
+    prime[0]=prime[1]=false;
+    int m=sqrt(n);//avoid multiple computation
+    for (int i = 2; i <= m; i++) {//use i< root(n) 
+        if(prime[i]==true){
+            int j=i*i;//change to i*i
+            //first unmarked number would be i*i , as other have been marked by 2 to (i-1)
+            while(j<n){
+                prime[j]=false;
+                j=j+i;
+            }
         }
     }
+    return prime;
+    
 }
 
-void segmentedSieve(long long L, long long R) {
-    vector<int> prime;
-    simpleSieve(sqrt(R), prime);
+vector<bool>segSeive(int L , int R){
+    vector<bool>segPrime=seive(sqrt(R));
+    vector<int>basePrime;
+    for (int i = 0; i < segPrime.size(); i++) {
+        if(segPrime[i]){
+            basePrime.push_back(i);
+        }
+    }
+    
 
-    int n = R - L + 1;
-    vector<bool> isPrime(n, true);
-
-    for (int p : prime) {
-        long long start = max(1LL * p * p, (L + p - 1) / p * p);
-        for (long long j = start; j <= R; j += p)
-            isPrime[j - L] = false;
+    vector<bool> seggSeive(R-L+1,true);
+    if(L==1 || L==0){
+        seggSeive[L]=false;
     }
 
-    for (int i = 0; i < n; i++) {
-        if (isPrime[i] && (L + i) != 1)
-            cout << (L + i) << " ";
+    for(auto prime : basePrime){
+        int first_mul=(L/prime)*prime;
+        if(first_mul<L){
+            first_mul+=prime;
+        }
+        int j = max (prime * prime , first_mul);
+        while (j<=R)
+        {
+            seggSeive[j - L]=false;
+            j+=prime;   
+        }
+        
     }
+    return seggSeive;
 }
-
 int main(){
-    cout << "Enter start and end point to Print prime number :";
-    int L ,R;cin>>L>>R;
-    segmentedSieve(L,R);
+    cout << "Enter First number  :";
+    int L;cin>>L;
+    cout << "Enter Last number  :";
+    int R;cin>>R;
+    vector<bool> ans=segSeive(L,R);
+    for (int i = 0; i < ans.size(); i++) {
+        if(ans[i]){
+            cout<<i +L<<" ";
+        }
+    }
     return 0;
 }
-
