@@ -23,7 +23,7 @@ public:
 int main(){
     int n ,m;
     cin>>n>>m;
-    Solution sc;
+    Solution sc;//object of solution
     cout<<sc.differenceOfSums(n,m);
     return 0;
 }
