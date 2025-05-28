@@ -55,6 +55,20 @@ int main(){
     // cout << "better practice :"<<gooodptr <<endl;
     // cout << "better practice :"<<goodptr <<endl;
 
+
+    // //pointer manupulation
+    // int p=40;
+    // int *pptr=&p;
+    // //change address
+    // cout << pptr <<endl;
+    // pptr=pptr+1;
+    // cout << pptr <<endl;
     
+    // change value
+    int p=40;
+    int *pptr=&p;
+    cout << *pptr <<endl;
+    *pptr=*pptr+1;
+    cout << *pptr <<endl;
     return 0;
 }
