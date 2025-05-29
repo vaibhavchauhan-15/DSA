@@ -16,6 +16,5 @@ int main(){
 
     solve(arr,5);
     return 0;
-
     
 }
