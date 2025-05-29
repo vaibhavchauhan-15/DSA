@@ -14,8 +14,11 @@ int main()
     cout << "ptr2 :" << ptr2 << endl;
     cout << "ptr3 :" << ptr3 << endl;
 
-    cout << ***ptr3 << endl; // it print the address of ptr2
-    cout << ptr2 << endl;    // it print own address
+    cout << ****(ptr3) << endl; // it print the value of  ptr
+    cout << ***(ptr3) << endl; // it print the address of ptr
+    cout << **(ptr3) << endl; // it print the address of ptr1
+    cout << *(ptr3) << endl; // it print the address of ptr2
+    cout << ptr3 << endl;    // it print own address 
 
     return 0;
 }
