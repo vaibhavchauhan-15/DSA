@@ -7,7 +7,8 @@ int main(){
     int*** ptr2=&ptr1;//tripple pointer it store the address of ptr1
     int**** ptr3=&ptr2;//fourth pointer it store the address of ptr2
 
-    
+cout << "Printing all pointer address" <<endl; 
+cout << "ptr :"  <<endl;
 
 
     cout<<*** ptr3<<endl;//it print the address of ptr2
