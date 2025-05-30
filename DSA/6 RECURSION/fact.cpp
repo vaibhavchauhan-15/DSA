@@ -3,9 +3,10 @@ using namespace std;
 
 int fact(int n){
     int ans;
-    if(n>=1){//base case
-        ans= n * fact(n-1);
+    if(n==1){//base case
+        return 1;
     }
+    ans= n * fact(n-1);//recursive call
     return ans;
 }
 
