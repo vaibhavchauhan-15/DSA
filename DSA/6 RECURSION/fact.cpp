@@ -6,13 +6,13 @@ int fact(int n){
     if(n==1){//base case
         return 1;
     }
-    ans= n * fact(n-1);//recursive call
+    ans= n * fact(n-1);//recursive call and processing
     return ans;
 }
 
 int main(){
     int n=5;
     cout<<fact(n)<<endl;
-    cout<<5*4*3*2*1;
+    // cout<<5*4*3*2*1;
     return 0;
 }
