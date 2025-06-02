@@ -8,13 +8,17 @@ public:
     {
         int n = ratings.size();
         vector<int> candy(n, 1);
-        for (int i = 0; i < n; i++)
-        {
-            if (i + 1 <=n && ratings[i] > ratings[i + 1] )
-            {
-                candy[i] += 1;
-            }else if(i - 1 >=0 && ratings[i] > ratings[i - 1]){
-                candy[i] += 1;
+         // Left to right
+        for (int i = 1; i < n; ++i) {
+            if (ratings[i] > ratings[i - 1]) {
+                candy[i] = candy[i - 1] + 1;
+            }
+        }
+
+        // Right to left
+        for (int i = n - 2; i >= 0; --i) {
+            if (ratings[i] > ratings[i + 1]) {
+                candy[i] = max(candy[i], candy[i + 1] + 1);
             }
         }
         int totalCandy = 0;
