@@ -9,31 +9,15 @@ void merge(int arr[],int s ,int e){
     int lenLeft=mid-s+1;
     int lenRight=e-mid;
 
-    //create left and right array
-    int *left=new int [lenLeft];
-    int *right=new int [lenRight];
-
-    //copy original value into left and right array
-    int k=s;//k is the starting element in the original array
-    for (int i = 0; i < lenLeft; i++) {
-        left[i]=arr[k++];  
-    }
-
-    //copy elememt for right array
-    k =mid+1;//starting element for right array
-    for (int i = 0; i < lenRight; i++) {
-        right[i]=arr[k++];  
-    }
-
     //merge sort logic
     int i=0;//left index
-    int j=0;//right index
+    int j=mid+1;//right index
     int m=s;//main array index
     while(i<lenLeft && j < lenRight){
-        if(left[i]<right[j]){
-            arr[m++]=left[i++];
+        if(arr[i]<arr[j]){
+            arr[m++]=arr[i++];
         }else{
-            arr[m++]=right[j++];
+            arr[m++]=arr[j++];
 
         }
     }
@@ -41,17 +25,14 @@ void merge(int arr[],int s ,int e){
 
     //copy remaing left array element 
     while(i<lenLeft){
-        arr[m++]=left[i++];
+        arr[m++]=arr[i++];
     }
     
     //copy remaing right array element 
     while(j<lenRight){
-        arr[m++]=right[j++];
+        arr[m++]=arr[j++];
     }
 
-    //free memory of left and right array
-    delete[] left;
-    delete[] right;
 }
 
 void mergeSort(int arr[] , int s , int e){
