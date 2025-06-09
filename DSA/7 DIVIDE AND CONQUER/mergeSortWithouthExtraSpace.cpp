@@ -22,7 +22,6 @@ void merge(int arr[],int s ,int e){
         }
     }
 
-
     //copy remaing left array element 
     while(i<lenLeft){
         arr[m++]=arr[i++];
