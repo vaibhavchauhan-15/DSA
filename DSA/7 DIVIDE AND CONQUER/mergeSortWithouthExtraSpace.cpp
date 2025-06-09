@@ -45,7 +45,6 @@ void mergeSort(int arr[] , int s , int e){
     //recursive call for right array
     mergeSort(arr,mid+1,e);
     merge(arr,s,e);
-
 }
 
 int main(){
