@@ -31,7 +31,6 @@ void merge(int arr[],int s ,int e){
     while(j<lenRight){
         arr[m++]=arr[j++];
     }
-
 }
 
 void mergeSort(int arr[] , int s , int e){
