@@ -14,7 +14,6 @@ int minWidth(int arr[] , int n , int h){
 return width;
 }
 
-
 int main(){
     int n,h;cin>>n>>h;
     int arr[n];
