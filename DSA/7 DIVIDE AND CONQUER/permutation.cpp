@@ -3,17 +3,17 @@
 
 using namespace std;
 
-void solve(string s,int index){
+void solve(string s,int i){
     //base case
-    if(index==s.size()){
+    if(i==s.size()){
         cout<<s<<" ";
         return ;
     }
     //calculation
-    for (int i = index; i < s.size(); i++) {
-        swap(s[i],s[index]);
+    for (int j = i; j < s.size(); j++) {
+        swap(s[j],s[i]);
         // recursive call
-        solve(s,index+1);
+        solve(s,i+1);
         // swap(s[i],s[index]);//backtrack
     }
 }

@@ -2,15 +2,16 @@
 #include<algorithm>
 using namespace std;
 
-void translate(string s,string t){
-    
-    reverse(s.begin(),s.end());
+void translate(string& s,string& t){
 
-    if(s==t){
-        cout << "Yes" <<endl;
+    string rev=s;
+    reverse(rev.begin(),rev.end());
+
+    if(rev==t){
+        cout << "YES" <<endl;
     }else{
 
-        cout << "No" <<endl;  
+        cout << "NO" <<endl;  
     }
 }
 
