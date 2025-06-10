@@ -15,6 +15,7 @@ return width;
 }
 
 
+
 int main(){
     int n,h;cin>>n>>h;
     int arr[n];
