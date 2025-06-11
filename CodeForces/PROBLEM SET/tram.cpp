@@ -23,6 +23,7 @@ int main(){
         }
     }
     
+    
     // Output the result
     cout << minCapacity << endl;
     
