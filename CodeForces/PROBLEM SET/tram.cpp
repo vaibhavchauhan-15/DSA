@@ -22,6 +22,7 @@ int main(){
             minCapacity = currentPassengers;
         }
     }
+
     
     
     // Output the result
