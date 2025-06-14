@@ -25,6 +25,5 @@ int main() {
     } else {
         cout << "EASY" << endl;
     }
-    
     return 0;
 }
