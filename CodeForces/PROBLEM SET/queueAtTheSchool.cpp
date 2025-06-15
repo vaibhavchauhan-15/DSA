@@ -2,7 +2,6 @@
 #include<string>
 using namespace std;
 
-
 int main(){
     // Read input: number of children (n) and time (t)
     int n, t;
