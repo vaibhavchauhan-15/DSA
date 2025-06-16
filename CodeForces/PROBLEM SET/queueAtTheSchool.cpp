@@ -24,8 +24,6 @@ int main(){
                 newQueue[pos + 1] = 'B';
             }
         }
-        
-
         // Update the queue for the next second
         queue = newQueue;
     }
