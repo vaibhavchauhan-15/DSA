@@ -29,6 +29,7 @@ int main(){
         queue = newQueue;
     }
     
+    
     // Output the final arrangement
     cout << queue << endl;
     
