@@ -27,7 +27,6 @@ int main(){
         // Update the queue for the next second
         queue = newQueue;
     }
-    
     // Output the final arrangement
     cout << queue << endl;
     
