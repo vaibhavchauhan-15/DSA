@@ -24,7 +24,6 @@ int main() {
         // Odd case
         result = -((n + 1) / 2);
     }
-    
     cout << result << endl;
     return 0;
 }
