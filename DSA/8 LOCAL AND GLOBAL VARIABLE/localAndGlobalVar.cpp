@@ -14,7 +14,6 @@ int main()
         cout << g << endl;//first prefrence to local varible with same name
         cout << ::g << endl; // access global variable
     }
-
-    
+ 
     return 0;
 }
