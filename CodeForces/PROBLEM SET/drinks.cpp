@@ -24,4 +24,4 @@ int main() {
     cout << fixed << setprecision(12) << averagePercentage << endl;
     
     return 0; 
-}
+} 
