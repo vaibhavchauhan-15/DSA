@@ -23,5 +23,5 @@ int main() {
     // Output the result with required precision
     cout << fixed << setprecision(12) << averagePercentage << endl;
     
-    return 0;
+    return 0; 
 }
