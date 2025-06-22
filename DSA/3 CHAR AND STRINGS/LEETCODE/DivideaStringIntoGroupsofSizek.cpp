@@ -27,8 +27,7 @@ public:
     
     return result;
     }
-};
-
+};Fix formatting by adding a new line before the main function
 int main(){
     
     return 0;
