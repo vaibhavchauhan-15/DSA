@@ -22,7 +22,7 @@ public:
 };
 int main()
 {
-    Student s1;
+    Student s1; 
     s1.study();
     Student s2; 
 
