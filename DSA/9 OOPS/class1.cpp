@@ -24,7 +24,7 @@ int main()
 {
     Student s1;  
     s1.study();
-    Student s2; 
+    Student s2;  
 
     cout << sizeof(Student) << endl;
     return 0;
