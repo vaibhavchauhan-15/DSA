@@ -23,13 +23,12 @@ public:
     }
 
     //parametrize ctor
-    Student(int _id , string _name , int _age , string _course , string _gf ){
+    Student(int _id , string _name , int _age , string _course){
         // cout << "Parametrize ctor called" <<endl;
         id=_id;
         name=_name;
         age=_age;
         course=_course;
-        gf=_gf;
     }
     
     //parametrize ctor(using this keyword)
