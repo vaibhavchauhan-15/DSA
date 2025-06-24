@@ -30,7 +30,16 @@ public:
         age=_age;
         course=_course;
         gf=_gf;
-
+    }
+    
+    //parametrize ctor(using this keyword)
+    Student(int id , string name , int age , string course , string gf ){
+        // cout << "Parametrize ctor called" <<endl;
+        this->id=id;
+        this->name=name;
+        this->age=age;
+        this->course=course;
+        this->gf=gf;
     }
     //behaviour
     void study()
