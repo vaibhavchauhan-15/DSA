@@ -3,7 +3,7 @@ using namespace std;
 int main(){
     vector<int>oddTime;
     vector<int>evenTime;
-    for (int i = 1; i <= 10; i++) { 
+    for (int i = 1; i <= 10; i++) {  
         if(i%2==0){
             evenTime.push_back(i); 
         }else{
