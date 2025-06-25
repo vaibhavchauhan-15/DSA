@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std; 
 int main(){
     vector<int>oddTime;
     vector<int>evenTime;
