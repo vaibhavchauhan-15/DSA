@@ -5,7 +5,7 @@ int main(){
     vector<int>evenTime;
     for (int i = 1; i <= 10; i++) {
         if(i%2==0){
-            evenTime.push_back(i);
+            evenTime.push_back(i); 
         }else{
             oddTime.push_back(i);
         }
