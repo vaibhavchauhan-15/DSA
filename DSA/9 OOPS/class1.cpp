@@ -69,5 +69,5 @@ int main()
     cout << s2.name <<endl;
 
     cout << sizeof(Student) << endl;//size of the class
-    return 0;
+    return 0; 
 }
