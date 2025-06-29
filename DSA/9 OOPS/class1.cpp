@@ -68,6 +68,6 @@ int main()
     Student s2(2,"aman",22,"b.tech","amani");    
     cout << s2.name <<endl;
 
-    // cout << sizeof(Student) << endl;//size of the class
+    cout << sizeof(Student) << endl;//size of the class
     return 0;
 }
