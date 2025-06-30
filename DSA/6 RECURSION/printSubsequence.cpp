@@ -15,7 +15,7 @@ void print(int index , vector<int > nums , vector<int> subq){
         }
         cout << "]" <<endl;
         return;
-    }  
+    }   
     //operation
     subq.push_back(nums[index]);
     print(index+1 , nums , subq);
