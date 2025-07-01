@@ -13,7 +13,7 @@ public:
         return count;
     }
 };
-int main(){
+int main(){ 
     string word="aaaa";
     Solution sc;
     cout<<sc.possibleStringCount(word)<<endl;
