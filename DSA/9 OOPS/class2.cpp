@@ -19,7 +19,7 @@ public:
 
     //defaul constructor(ctor) by default assign garbage value
     Student(){
-        // cout << "Default ctor called" <<endl;
+        cout << "Default ctor called" <<endl;
     }
 
     //parametrize ctor
@@ -40,6 +40,16 @@ public:
         this->course=course;
         this->gf=gf;
     }
+
+    // copy ctor
+    Student(const Student& scrobj){
+        cout << "Copy Ctor Called" <<endl;
+        this->id=scrobj.id;
+        this->name=scrobj.name;
+        this->age=scrobj.age;
+        this->course=scrobj.course;
+        // this->gf=gf;
+    }
     //behaviour
     void study()
     {
@@ -59,22 +69,17 @@ private:
 };
 int main()
 {
-    Student s1; 
-    s1.id=1;
-    s1.name="vaibhav";
-    s1.age=20;
-    s1.course=6;
-    cout<<s1.name<<endl;
-    Student s2(2,"aman",22,"b.tech","amani");    
+
+    Student s1(1,"vaibhav" , 20 , "b.tech");
+    //copy ctor   
+    Student  s2;//here default ctor are called
+    s2=s1; //this is bad practice and here copy withou ctor
+    Student s3=s1;//here copy ctor called
+    Student s4(s1);//another way
+    cout << s1.name <<endl;
     cout << s2.name <<endl;
-
-    //allocating on heap
-    Student *s4 =  new Student(4 , "kalya" , 19 , "cse");
-    //access s4
-    cout << s4->name <<endl;
-    cout << (*s4).name <<endl;//derefrensing
-
-
-    // cout << sizeof(Student) << endl;//size of the class
+    cout << s3.name <<endl;
+    cout << s4.name <<endl;
+   
     return 0;  
 }
