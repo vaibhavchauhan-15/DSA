@@ -50,6 +50,11 @@ public:
         this->course=scrobj.course;
         // this->gf=gf;
     }
+
+    //dtor
+    ~Student(){
+        cout << "Dtor called" << endl;
+    }
     //behaviour
     void study()
     {
