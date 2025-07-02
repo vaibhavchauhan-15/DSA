@@ -28,7 +28,7 @@ public:
         id=_id;
         name=_name;
         age=_age;
-        course=_course;
+        course=_course; 
     }
     
     //parametrize ctor(using this keyword)
