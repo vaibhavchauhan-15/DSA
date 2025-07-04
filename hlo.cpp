@@ -1,22 +1,30 @@
-#include<bits/stdc++.h>
-using namespace std; 
-int main(){
-    vector<int>oddTime;
-    vector<int>evenTime;
-    for (int i = 1; i <= 10; i++) {  
-        if(i%2==0){
-            evenTime.push_back(i); 
-        }else{
-            oddTime.push_back(i);
-        }
+#include <iostream>
+using namespace std;
+
+string checkPassFail(int marks) {
+    if (marks < 0 || marks > 100) {
+        return "Invalid Input";
+    } else if (marks >= 40) {
+        return "Pass";
+    } else {
+        return "Fail";
     }
-    cout << "Print even " <<endl;
-    for (int i = 0; i < evenTime.size(); i++) {
-        cout << evenTime[i] <<" ";
+}
+
+int main() {
+    cout<<"enter test case :";
+    int t;cin>>t;
+    while (t--)
+    {
+        int marks;
+        cout << "Enter marks (0-100): ";
+        cin >> marks;
+    
+        string result = checkPassFail(marks);
+        cout << "Result: " << result << endl;
+        
     }
-    cout <<endl<< "Print odd " <<endl;
-    for (int i = 0; i < oddTime.size(); i++) {
-        cout << oddTime[i] <<" ";
-    }
+    
+
     return 0;
 }
