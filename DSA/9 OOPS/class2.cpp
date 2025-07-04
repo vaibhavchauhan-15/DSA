@@ -16,6 +16,7 @@ public:
     string name;
     int age;
     string course;
+    int *v;
 
     //defaul constructor(ctor) by default assign garbage value
     Student(){
@@ -48,12 +49,13 @@ public:
         this->name=scrobj.name;
         this->age=scrobj.age;
         this->course=scrobj.course;
-        // this->gf=gf;
+        this->v=new int (10);//to delete this we need custom dtor
     }
 
     //dtor
     ~Student(){
         cout<<"Dtor called"<<endl;
+        delete v;
     }
     //behaviour
     void study()
@@ -67,11 +69,24 @@ public:
         cout << "Playing" <<endl;
     }
 
+    //to get and set private data
+    //we need getter and setter
+    
+    string getGfName(){//getter
+        return gf;
+    }
+
+    void setGfName(string gf){
+        this->gf=gf;
+    }
 private:
     void gfChatting(){
         cout << "Chatting with gf ." <<endl;
     }
 };
+
+
+
 int main()
 {
 
@@ -85,6 +100,11 @@ int main()
     cout << s2.name <<endl;
     cout << s3.name <<endl;
     cout << s4.name <<endl;
+
+    s1.setGfName("chutki");//set gf name to chutki
+    cout<<s1.getGfName()<<endl;
+    s1.setGfName("indumati");//set gf name to indumati
+    cout<<s1.getGfName()<<endl;
    
-    return 0;  
+    return 0;
 }
