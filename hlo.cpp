@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-    std::vector<int> arr = {1, 2, 1, 3, 2, 1, 4};
-    std::unordered_map<int, int> count;
+    vector<int> arr = {1, 2, 1, 3, 2, 1, 4};
+    unordered_map<int, int> count;
 
     for (int num : arr) {
         count[num]++;
