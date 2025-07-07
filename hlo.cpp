@@ -13,7 +13,7 @@ int main() {
 
     // Output the frequency of each element
     for (const auto& pair : count) {
-        std::cout << "Element " << pair.first << " appears " << pair.second << " times.\n";
+        cout << "Element " << pair.first << " appears " << pair.second << " times.\n";
     }
 
     return 0;
