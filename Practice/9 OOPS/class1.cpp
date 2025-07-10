@@ -6,7 +6,7 @@ class Student
 
 //access modifier
 private:
-//properties
+//properties 
 string gf;
  
 //access modifier
