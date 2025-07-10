@@ -2,7 +2,7 @@
 using namespace std;
 
 class Student
-{
+{ 
 
 //access modifier
 private:
