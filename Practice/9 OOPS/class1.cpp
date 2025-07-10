@@ -8,7 +8,7 @@ class Student
 private:
 //properties
 string gf;
-
+ 
 //access modifier
 public:
     //properties
