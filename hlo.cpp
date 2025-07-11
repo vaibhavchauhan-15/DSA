@@ -7,7 +7,7 @@ int main() {
     vector<int> arr = {1, 2, 1, 3, 2, 1, 4}; 
     unordered_map<int, int> count;
 
-    for (int num : arr) {
+    for (int num : arr) { 
         count[num]++;
     }  
 
