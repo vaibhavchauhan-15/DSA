@@ -9,7 +9,7 @@ int main() {
 
     for (int num : arr) {
         count[num]++;
-    } 
+    }  
 
     // Output the frequency of each element
     for (const auto& pair : count) {
