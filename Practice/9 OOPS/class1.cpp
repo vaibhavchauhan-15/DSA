@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
-
+ 
 class Student
-{
+{ 
 
 //access modifier
 private:
-//properties
+//properties 
 string gf;
-
+ 
 //access modifier
 public:
     //properties
