@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 int findPeak(vector<int>& arr){
     int start=0;
