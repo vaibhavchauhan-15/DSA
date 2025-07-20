@@ -47,7 +47,7 @@ int main() {
             cout << valid << " ";
         }
 
-        cout << endl;
+        cout << endl; 
     }
 
     return 0;   
