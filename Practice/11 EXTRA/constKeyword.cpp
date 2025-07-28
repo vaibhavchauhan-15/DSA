@@ -18,5 +18,6 @@ int main() {
     cout << "const data and non const pointer" << endl;
     int  * const y = new int(100);//const pointer
     // *y=200;
+    
     return 0;
 }
