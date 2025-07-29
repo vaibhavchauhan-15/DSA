@@ -9,7 +9,6 @@ class Node{
     Node* left;
     Node* right;
 
-
     Node(int value){
         this->data=value;
         this->left=NULL;
