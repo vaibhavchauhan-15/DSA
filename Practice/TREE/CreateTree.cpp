@@ -23,6 +23,7 @@ Node* createtree(){
     int data;
     cin>>data;
     
+
     //create new node
     Node* root = new Node(data);
     
@@ -31,6 +32,7 @@ Node* createtree(){
         return NULL;
     }
     
+
     //set data
     root->data=data;
     //set left node data
@@ -41,8 +43,10 @@ Node* createtree(){
     root->right=createtree();
     
 }
+
 int main(){
     cout<<"Enter valid node (-1 for null node) :";
     Node* root = createtree();
     cout<<"Root node is :"<<root->data<<endl;
+    
 }
