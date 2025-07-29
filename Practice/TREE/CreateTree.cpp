@@ -17,7 +17,6 @@ class Node{
     }
 };
 
-
 Node* createtree(){
     // cout<<"Enter a valid Number (-1 for NULL node):";
     int data;
@@ -48,5 +47,5 @@ int main(){
     cout<<"Enter valid node (-1 for null node) :";
     Node* root = createtree();
     cout<<"Root node is :"<<root->data<<endl;
-    
+
 }
