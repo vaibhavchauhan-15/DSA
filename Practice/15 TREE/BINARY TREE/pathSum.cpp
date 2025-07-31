@@ -14,8 +14,6 @@ class Node{
     }
 };
 
-
-
 Node* createTree(){
     int val;cin>>val;
 
@@ -30,6 +28,9 @@ Node* createTree(){
 
     return root;
 }
+
+
+
 int main() {
     
     return 0;
