@@ -28,24 +28,56 @@ Node* creatTree(){
 }
 
 
+// void levelOrderTraversal(Node* root){
+//     queue<Node*> q;
+//     q.push(root);
+
+//     //start traversal
+//     while(!q.empty()){
+//         Node* front = q.front();
+//         q.pop();
+
+//         //print data
+//         cout << front->data <<" ";
+//         if(front->left!=NULL){
+//             q.push(front->left);
+//         }
+//         if(front->right!=NULL){
+//             q.push(front->right);
+//         }
+//     }
+// }
+
+//use NULL as a marker for next level
+
 void levelOrderTraversal(Node* root){
     queue<Node*> q;
     q.push(root);
-
+    q.push(NULL);
 
     //start traversal
     while(!q.empty()){
         Node* front = q.front();
         q.pop();
 
-        //print data
-        cout << front->data <<" ";
-        if(front->left!=NULL){
-            q.push(front->left);
+        if(front==NULL){
+            cout  << endl;
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }else{
+            //print data
+            cout << front->data <<" ";
+
+            if(front->left!=NULL){
+                q.push(front->left);
+            }
+            if(front->right!=NULL){
+                q.push(front->right);
+            }
+            
         }
-        if(front->right!=NULL){
-            q.push(front->right);
-        }
+
     }
 }
 int main() {

@@ -26,7 +26,7 @@ Node* createTree(){
     cin>>n;
 
     for (int i = 0; i < n; i++) {
-        cout << "Enter the childe ("<<i+1<<") of node"<<val <<"\n";
+        cout << "Enter the child ("<<i+1<<") of node"<<val <<"\n";
         //create node
         Node* childNode=createTree();
         root->child.push_back(childNode);
