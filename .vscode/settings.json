@@ -66,6 +66,7 @@
         "scoped_allocator": "cpp",
         "stdexcept": "cpp",
         "typeindex": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "xstring": "cpp"
     }
 }
