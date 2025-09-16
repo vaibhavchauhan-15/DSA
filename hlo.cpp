@@ -1,7 +1,7 @@
 #include <iostream>  
 #include <unordered_map>   
 #include <vector>  
-using namespace std;   
+using namespace std;    
  
 int main() {
     vector<int> arr = {1, 2, 1, 3, 2, 1, 4};        
