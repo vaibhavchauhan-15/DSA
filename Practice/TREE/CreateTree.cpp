@@ -47,4 +47,4 @@ int main(){
     Node* root = createtree();
     cout<<"Root node is :"<<root->data<<endl;
 
-}
+}   
