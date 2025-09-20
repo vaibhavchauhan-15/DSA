@@ -1,50 +1,51 @@
-// ******************USING INORDER ****************LNR
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Node{ 
+
+class Node{
     public:
-    //create node
     int data;
     Node* left;
     Node* right;
 
-    Node(int value){
-        this->data=value;
+    Node(int val){
+        this->data=val;
         this->left=NULL;
-        this->right=NULL;
+        this->left=NULL;
     }
 };
 
-Node* createtree(){
-    // cout<<"Enter a valid Number (-1 for NULL node):";
-    int data;
-    cin>>data;
-    
-
-    //create new node
-    Node* root = new Node(data);
-    
+Node* createTree(){
+    int data;cin>>data;
     //base case
     if(data==-1){
         return NULL;
     }
-    
-
-    //set data
-    root->data=data;
-    //set left node data
-    // cout<<"Enter left node of:"<<root->data<<endl;
-    root->left=createtree();
-    //set right node data
-    // cout<<"Enter right node of:"<<root->data<<endl;
-    root->right=createtree();
-    
+    //using inorder
+    //1 create root node
+    Node* root = new Node(data);
+    //2 left child
+    root->left= createTree();
+    //3 right child
+    root->right= createTree();
+    return root;
 }
-
-int main(){
-    cout<<"Enter valid node (-1 for null node) :";
-    Node* root = createtree();
-    cout<<"Root node is :"<<root->data<<endl;
-
-}   
+//print tree
+void inorder(Node* root){
+    //base case
+    if(root==NULL){
+        return;
+    }
+    //go left
+    inorder(root->left);
+    //print data
+    cout<<root->data << " ";
+    //go right
+    inorder(root->right);
+}
+int main() {
+    Node* root=createTree() ;
+    cout<<"Printing Tree in Inoder Format : ";
+    inorder(root);
+    return 0;
+}
