@@ -1,4 +1,5 @@
 #include <iostream>
+#include<queue>
 using namespace std;
 
 //node
@@ -51,10 +52,40 @@ void printTree(NODE* root){
 
 
 //print node in level order 
+void levelOrder(NODE* root){
+    //base case
+    // if(root==NULL) return;
+    queue<NODE*>q;
+    q.push(root);
+    q.push(NULL);
 
+    while(!q.empty()){
+        NODE* temp = q.front();
+        q.pop();
+        
+        if(temp==NULL){
+            cout<<endl;
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }else{
+            cout<<temp->data<<" ";
+            if(temp->left != NULL){
+                q.push(temp->left);
+            }
+            if(temp->right!=NULL){
+                q.push(temp->right);
+            }
+        }
+    }
+
+}
 int main() {
     NODE* root = createTree();
     cout << "Printing Tree in Inorder :";
     printTree(root);
+    cout << endl;
+    cout<<"Printing Tree in LevelOrder"<<endl;
+    levelOrder(root);
     return 0;
 }
