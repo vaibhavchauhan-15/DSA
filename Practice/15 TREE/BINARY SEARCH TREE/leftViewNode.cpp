@@ -1,5 +1,7 @@
 #include <iostream>
 #include<queue>
+#include<vector>
+#include<map>
 using namespace std;
 
 //node
@@ -80,12 +82,112 @@ void levelOrder(NODE* root){
     }
 
 }
+
+
+
+void printLeftView(NODE* root , int level , vector<int>& leftview ){
+    //base case
+    if(root==NULL){
+        return;
+    }
+
+    if(level==leftview.size()){
+        leftview.push_back(root->data);
+    }
+
+    printLeftView(root->left , level+1 , leftview);
+    printLeftView(root->right , level+1 , leftview);
+}
+
+void printRightView(NODE* root , int level , vector<int>& leftview ){
+    //base case
+    if(root==NULL){
+        return;
+    }
+
+    if(level==leftview.size()){
+        leftview.push_back(root->data);
+    }
+
+    printRightView(root->right , level+1 , leftview);
+    printRightView(root->left , level+1 , leftview);
+}
+
+void topView(NODE* root){
+    //base case
+    if(root==NULL) return;
+    map<int , int > hdToNodeMap;//horizontal distance(hd)-> node data
+    queue<pair<NODE* , int> > q;
+    q.push(make_pair(root , 0));
+    
+    while(!q.empty()){
+        //store first data
+        pair<NODE* , int> temp = q.front();
+
+        //pop the first data
+        q.pop();
+        //assign the data
+        NODE* frontNode = temp.first;
+        int hd = temp.second;
+
+        //find in the map
+        //if there is no entry in the map then create new entry
+        if(hdToNodeMap.find(hd)==hdToNodeMap.end()){
+            hdToNodeMap[hd]=frontNode->data;
+        }
+        //left child
+        if(frontNode->left!=NULL){
+            q.push(make_pair(frontNode->left, hd-1));
+        }
+        //right child
+        if(frontNode->right!=NULL){
+            q.push(make_pair(frontNode->right, hd+1));
+        }
+
+    }
+    //print the data of map
+    cout << "Printing the Top View :";
+    for(auto i : hdToNodeMap){
+        cout<<i.second<<" ";
+    }
+}
+
+void printVector(vector<int>& data){
+    for (int i = 0; i < data.size(); i++) {
+        cout <<data[i]<< " ";     
+    }
+    return;
+}
 int main() {
+    //vector for store the left and right view if not using vector then use count 
+    vector<int> leftview;
+    vector<int> rightview;
+
+    //create the tree
     NODE* root = createTree();
-    cout << "Printing Tree in Inorder :";
-    printTree(root);
-    cout << endl;
-    cout<<"Printing Tree in LevelOrder"<<endl;
+
+    //print tree in levelorder
+    cout << "Print tree in level order "<<endl;
     levelOrder(root);
+
+    //Fun call for left view
+    printLeftView(root , 0 , leftview);
+    cout << "Priting left view :";
+    printVector(leftview);
+
+    cout  << endl;
+
+    //Fun call for right view
+    printRightView(root , 0 , rightview);
+    cout << "Priting right view :";
+    printVector(rightview);
+
+    cout << "" << endl;
+
+    //top view
+    topView(root);
     return 0;
+    
+    //sample input
+    //10 20 40 -1 -1 50 70 110 -1 -1 111 -1 -1 80 -1 -1 30 -1 60 -1 90 112 -1 -1 113 -1 -1
 }
