@@ -152,6 +152,43 @@ void topView(NODE* root){
     }
 }
 
+
+void bottomView(NODE* root){
+    //base case
+    if(root==NULL) return;
+    map<int , int > hdToNodeMap;//horizontal distance(hd)-> node data
+    queue<pair<NODE* , int> > q;
+    q.push(make_pair(root , 0));
+    
+    while(!q.empty()){
+        //store first data
+        pair<NODE* , int> temp = q.front();
+
+        //pop the first data
+        q.pop();
+        //assign the data
+        NODE* frontNode = temp.first;
+        int hd = temp.second;
+
+        //overwrite so deeper nodes can store
+        hdToNodeMap[hd]=frontNode->data;
+        //left child
+        if(frontNode->left!=NULL){
+            q.push(make_pair(frontNode->left, hd-1));
+        }
+        //right child
+        if(frontNode->right!=NULL){
+            q.push(make_pair(frontNode->right, hd+1));
+        }
+
+    }
+    //print the data of map
+    cout << "Printing the Bottom View :";
+    for(auto i : hdToNodeMap){
+        cout<<i.second<<" ";
+    }
+}
+
 void printVector(vector<int>& data){
     for (int i = 0; i < data.size(); i++) {
         cout <<data[i]<< " ";     
@@ -186,6 +223,11 @@ int main() {
 
     //top view
     topView(root);
+
+    cout<<endl;
+
+    //bottom view
+    bottomView(root);
     return 0;
     
     //sample input
