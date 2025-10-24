@@ -1,3 +1,4 @@
+#!/bin/python3
 
 import math
 import os
@@ -5,29 +6,28 @@ import random
 import re
 import sys
 
-def getMinimumCost(s, t):
-    n = len(s)
-    m = len(t)
-    
-    pos = []
-    i = m - 1
-    for j in range(n - 1, -1, -1):
-        if i >= 0 and s[j] == t[i]:
-            pos.append(j)
-            i -= 1
-            if i < 0:
-                break
-    if i >= 0:
-        return -1
-    
-    sum_kept = sum(pos)
-    total_indices_sum = n * (n - 1) // 2
-    k = n - m  # number of deletions
-    cost = (total_indices_sum - sum_kept) - (k * (k - 1) // 2)
-    return cost
+
+
+def splitIntoTwo(arr):
+    n = len(arr)
+    total_sum = sum(arr)
+    left_sum = 0
+    count = 0
+
+    for i in range(n - 1):
+        left_sum += arr[i]
+        right_sum = total_sum - left_sum
+        if left_sum > right_sum:
+            count += 1
+
+    return count
 
 if __name__ == '__main__':
-    s = input().strip()
-    t = input().strip()
-    result = getMinimumCost(s, t)
+    n = int(input().strip())
+    arr = []
+    for _ in range(n):
+        arr_item = int(input().strip())
+        arr.append(arr_item)
+
+    result = splitIntoTwo(arr)
     print(result)
