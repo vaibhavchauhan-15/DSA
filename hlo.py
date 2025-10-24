@@ -8,6 +8,7 @@ import sys
 def getMinimumCost(s, t):
     n = len(s)
     m = len(t)
+    
     pos = []
     i = m - 1
     for j in range(n - 1, -1, -1):
