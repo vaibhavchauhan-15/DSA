@@ -1,12 +1,8 @@
-#!/bin/python3
-
 import math
 import os
 import random
 import re
 import sys
-
-
 
 def splitIntoTwo(arr):
     n = len(arr)
@@ -19,7 +15,6 @@ def splitIntoTwo(arr):
         right_sum = total_sum - left_sum
         if left_sum > right_sum:
             count += 1
-
     return count
 
 if __name__ == '__main__':
