@@ -10,7 +10,7 @@ def splitIntoTwo(arr):
     left_sum = 0
     count = 0
 
-    for i in range(n - 1):
+    for i in range(n - 1): 
         left_sum += arr[i]
         right_sum = total_sum - left_sum
         if left_sum > right_sum:
