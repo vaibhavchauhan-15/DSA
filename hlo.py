@@ -5,7 +5,7 @@ import re
 import sys   
 
 def splitIntoTwo(arr):   
-    n = len(arr)
+    n = len(arr) 
     total_sum = sum(arr) 
     left_sum = 0
     count = 0
