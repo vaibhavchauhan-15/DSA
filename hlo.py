@@ -4,7 +4,7 @@ import random
 import re  
 import sys     
 
-def splitIntoTwo(arr):   
+def splitIntoTwo(arr):    
     n = len(arr) 
     total_sum = sum(arr) 
     left_sum = 0
