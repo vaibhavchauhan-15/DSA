@@ -25,5 +25,5 @@ if __name__ == '__main__':
         arr.append(arr_item) 
 
     result = splitIntoTwo(arr)
-    print(result)    
+    print(result)     
  
