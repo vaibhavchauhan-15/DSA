@@ -26,3 +26,4 @@ if __name__ == '__main__':
 
     result = splitIntoTwo(arr)
     print(result)    
+ 
