@@ -2,7 +2,7 @@
 import os     
 import random                       
 import re              
-import sys        
+import sys         
  
 def splitIntoTwo(arr):    
     n = len(arr) 
