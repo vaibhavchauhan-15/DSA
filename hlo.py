@@ -1,6 +1,6 @@
  import os          
 import random                                  
-import re                  
+import re                   
 import sys         
    
 def splitIntoTwo(arr):    
