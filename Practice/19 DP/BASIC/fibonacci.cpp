@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;  
 
-int solveUsingRec(int n){
+int solveUsingRec(int n){ 
     //base case
     if(n==1 || n==0) return n;
 
