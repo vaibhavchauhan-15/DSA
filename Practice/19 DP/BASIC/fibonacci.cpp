@@ -1,6 +1,6 @@
 #include <iostream>
 #include<vector>
-using namespace std; 
+using namespace std;  
 
 int solveUsingRec(int n){
     //base case
