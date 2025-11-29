@@ -12,7 +12,7 @@ class Node{
         this->data=val;
     }
 
-};
+}; 
 
 Node* createTree(){
     int val;
