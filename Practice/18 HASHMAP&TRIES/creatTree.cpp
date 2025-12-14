@@ -20,7 +20,7 @@ Node* createTree(){
     cin>>val;
     
     Node* root = new Node(val);
-
+ 
     int n;
     cout << "Enter the Children of Node :"<<val << ":";
     cin>>n;
